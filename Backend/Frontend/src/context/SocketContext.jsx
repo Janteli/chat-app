@@ -15,10 +15,10 @@ export const SocketProvider = ({children}) =>{
     const [onlineUsers, setOnlineUsers] = useState([])
 
     const [authUser] = useAuth();
-
+// before localhost
     useEffect(()=>{
         if(authUser){
-            const socket = io("http://localhost:4000",{
+            const socket = io("https://chhoti-chat-app.onrender.com",{
                 query: {
                     userId: authUser.user._id
                 }
