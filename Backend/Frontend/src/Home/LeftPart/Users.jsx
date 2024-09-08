@@ -4,7 +4,7 @@ import useGetAllUSers from "../../context/useGetAllUSers";
 
 const Users = () => {
   const [allUsers, loading] = useGetAllUSers()
-  // console.log("allUser",allUsers)
+  console.log("allUser",allUsers)
    return (
     <div>
       <h1 className="px-8 py-2 text-white font-semibold bg-slate-600 rounded-md">

@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 import axios from "axios";
 
 const useGetAllUsers = () => {
-  const [allUsers, setAllUsers] = useState({ filteredUser: [] });
+  const [allUsers, setAllUsers] = useState([]);  // Initialize with an empty array, not an object
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const useGetAllUsers = () => {
             Authorization: `Bearer ${token}`,
           },
         });
-        setAllUsers(response.data.filteredUser);  // Ensure you set the entire response data
+        setAllUsers(response.data.filteredUser);  // Store users as an array
         setLoading(false);
       } catch (error) {
         console.log("Error in get all users: " + error);
